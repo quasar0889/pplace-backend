@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>w/place clone</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+<div class="app">
+<header>
+<h1>w/place</h1>
+<div class="server">Server: <span id="serverUrl"></span></div>
+</header>
+
+
+<main>
+<aside class="tools">
+<div class="section">
+<label>サーバーURL</label>
+<input id="serverInput" placeholder="https://<your-app>.onrender.com" />
+<button id="connectBtn">接続</button>
+</div>
+<div class="section">
+<label>カラー</label>
+<input type="color" id="colorPicker" />
+<div id="palette" class="palette"></div>
+<p class="hint">Alt + クリック = スポイト</p>
+</div>
+<div class="section">
+<button id="resetView">ビューリセット</button>
+</div>
+</aside>
+
+
+<section class="stage">
+<div class="canvas-wrap">
+<canvas id="canvas" width="512" height="512"></canvas>
+<canvas id="overlay" width="512" height="512"></canvas>
+</div>
+<div class="status">
+<span id="coord">-,-</span>
+<span id="zoom">x1.00</span>
+</div>
+<div class="minimap">
+<canvas id="minimap" width="128" height="128"></canvas>
+</div>
+</section>
+</main>
+</div>
+
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
